@@ -1,0 +1,15 @@
+﻿<script src="../common/attachment.js"></script>
+<div id="Book"></div>
+<script id="BookTemplate" type="text/html">
+<%
+for(i = 0; i < data.length; i ++) {
+	var row = data[i];
+%>
+<div>
+	<div><a target='_blank' href='/upload/<%=row.fileNameInDisk%>'><%=row.fileName%></a></div>
+	<%if(CUpload.isImage(row.fileNameInDisk)){%>
+	<img src="/upload/<%=row.fileNameInDisk%>"/>
+	<%}%>
+</div>
+<%}%>
+</script>

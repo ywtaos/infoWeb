@@ -1,0 +1,30 @@
+﻿<script src="../dict/tab.js"></script>
+<div class="tab" id="dict_tab">
+
+</div>
+<script id="DictResultTemplate" type="text/html">
+	<ul class="nav">
+		<%
+		for(i = 0; i < data.length; i ++) {
+			var row = data[i];
+			var current="";
+			if(i==0){
+				current="current";
+			}
+		%>
+		<li><a href="#<%=row.code%>" class="<%=current%>" ulID="<%=row.code%>" dictID="<%=row.ID%>"><%=row.name%></a></li>
+		<%}%>
+	</ul>
+	<div class="list-wrap">
+		<%
+		for(i = 0; i < data.length; i ++) {
+			var row = data[i];
+			var show="";
+			if(i>0){
+				show="hide";
+			}
+		%>
+		<ul id="<%=row.code%>" class="<%=show%>"></ul>
+		<%}%>
+	</div>
+</script>

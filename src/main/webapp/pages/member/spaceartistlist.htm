@@ -1,0 +1,25 @@
+<script src="../member/common.js"></script>
+<script src="../member/spaceartistlist.js"></script>
+<h1>空间艺术家列表</h1>
+<div id="SpaceArtistCommand" class="list_command">
+	<a class="Button_Add" ></a>
+	<a class="Button_Remove" ></a>
+</div>
+<div id="SpaceArtistResult"></div>
+<script id="SpaceArtistResultTemplate" type="text/html">
+	<table class="list_result">
+		<tr>	
+       <th class="check"><input type="checkbox" onclick="CCore.checkAll('chkspaceRow', this.checked);"/></th>
+			<th class="Member_Artist"></th>
+		</tr>
+		<%
+		for(i = 0; i < data.length; i ++) {
+			var row = data[i];
+		%>
+		<tr id="<%=row.ID%>">
+           <td class="center check"><input type="checkbox" value="<%=row%>" name="chkspaceRow"/></td>
+			<td ><%=row%></td> 	
+		</tr>
+		<%}%>
+	</table>
+</script>

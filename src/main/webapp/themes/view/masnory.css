@@ -1,0 +1,21 @@
+
+.container {
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.artwork-wrap{
+	padding:15px;
+  float:left;
+  width:433px;
+}
+
+.artwork-wrap img {
+  width: 100%;
+  display:block;
+} 
+body{
+	width:100%;
+}
+
+

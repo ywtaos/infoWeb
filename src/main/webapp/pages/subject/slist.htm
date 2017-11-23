@@ -1,0 +1,66 @@
+<script src="../share/common.js"></script>
+<script src="../subject/common.js"></script>
+<script src="../subject/slist.js"></script>
+<div id="ShareSearch" class="list_search">
+<!--	<label class="Common_Keyword"></label>
+	<h2></h2>
+ 	<label class="Share_CommentCount"></label>
+	<h2><input type="text" id="searchCommentCount"/></h2><a class="Button_Search"></a>	 -->
+	<input type="hidden" id="searchCategoryID"/>	
+	<input type="hidden" id="subjectTitle"/>	
+	<a class="Button_Buzz">热度</a>
+	<a class="Button_Time">时间</a>
+	<input type="hidden" id="backstage" value="1"/>
+</div>
+<!--
+<div id="ShareCommand" class="list_command">
+    <a class="Button_Add " auth="ShareAdd"></a>
+	<a class="Button_Remove "auth="ShareRemove" ></a>
+	<a class="Button_Open " auth="ShareOpen"></a>
+	<a class="Button_Close " auth="ShareClose"></a>
+	<a class="Button_Chosen "auth="ShareHot"></a>
+	<a class="Button_Recommend " auth="ShareRecommend"></a>
+</div>  -->
+<div id="ShareResult"></div>
+<script id="ShareResultTemplate" type="text/html">
+	<table class="list_result">
+		<tr>
+			<th class="check"><input type="checkbox" onclick="CCore.checkAll('chkRow', this.checked);"/></th>
+			<th class='Common_Title read'></th>		
+			<th class='Share_PubDate'></th>
+			<th class='Common_Content baol'></th>
+            <th class='Share_CommentCount'></th>
+            <th class=''>转发数</th>
+            <th class=''>点赞数</th>
+            <th class=''>关注数</th>
+            <th class=''>阅读数</th>
+			<th class='Common_Status'></th>
+		<!--	<th class='Share_Tab'></th> -->
+			<th class='Subject_isTop read'></th> 
+			<th class='Information_IsFocus read'></th> 
+			<th class='Information_Hot'></th>
+			<th class="Button_Edit"></th>
+		</tr>
+		<%
+		for(i = 0; i < data.length; i ++) {
+			var row = data[i];
+		%>
+		<tr class="row<%=row.ID%>" id="<%=row.ID%>">
+			<td class="center check"><input type="checkbox" value="<%=row.ID%>" name="chkRow"/></td>
+			<td class='read'><%=row.title%></td>
+			<td class='center'><%=row.pubDateStr%></td>	
+			<td class='baol' ><%=row.shareContent%></td>
+			<td class='center'><%=row.commentCounts%></td>
+			<td class='center'><%=row.relayCounts%></td>
+			<td class='center'><%=row.attitudeCounts%></td>
+			<td class='center'><%=row.readCounts%></td>
+			<td class='center'><%=row.statusName%></td>
+		<!--	<td class='center'><%=row.tag%></td> -->
+			<td class='center read'><%=row.isTopName%></td> 
+			<td class='center read'><%=row.isFocusName%></td>
+			<td class='center'><%=row.hotName%></td>	
+			<td class="center"><a class="Button_Edit"></a></td>
+		</tr>
+		<%}%>
+	</table>
+</script>

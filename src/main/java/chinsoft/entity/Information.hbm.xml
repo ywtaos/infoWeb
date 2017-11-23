@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping >
+    <class name="chinsoft.entity.Information" table="Information">
+       <id name="ID" column="ID" type="string" >
+            <generator class="uuid"/>
+        </id>
+       <property name="Title" column="Title" type="string"/>
+       <property name="Content" column="Content" type="string"/>
+       <property name="AttachmentIDs" column="AttachmentIDs" type="string"/>
+       <property name="PubMemberID" column="PubMemberID" type="string"/>
+       <property name="PubDate" column="PubDate" type="date"/>
+       <property name="StatusID" column="StatusID" type="integer"/>
+       <property name="CategoryID" column="CategoryID" type="integer"/>
+       <property name="Url" column="Url" type="string"/>
+       <property name="HotID" column="HotID" type="integer"/>
+       <property name="IsFocusID" column="IsFocusID" type="integer"/>           
+    </class>
+</hibernate-mapping>

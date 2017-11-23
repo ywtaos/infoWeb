@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="chinsoft.entity">
+    <class name="Member" table="Member">
+        <id name="ID" column="ID" type="string">
+            <generator class="uuid" />
+        </id>
+        <property name="Password" column="Password" type="string"/>
+        <property name="Username" column="Username" type="string"/>
+        <property name="StatusID" column="StatusID" type="integer"/>
+        <property name="RegistDate" column="RegistDate" type="date"/>
+        <property name="LastLoginDate" column="LastLoginDate" type="date"/>
+        <property name="ClientIP" column="ClientIP" type="string"/>
+        <property name="GroupID" column="GroupID" type="integer"/>
+        <property name="Tel" column="Tel" type="string"/>
+        <property name="Email" column="Email" type="string"/>
+        <property name="Mobile" column="Mobile" type="string"/>
+        <property name="Name" column="Name" type="string"/>
+        <property name="Address" column="Address" type="string"/>
+        <property name="Description" column="Description" type="string"/>
+        <property name="ImageID" column="ImageID" type="string"/>
+        <property name="IsRecommendID" column="IsRecommendID" type="integer"/>
+		<property name="AirPort" column="AirPort" type="string"/>
+
+        <property name="Artists" column="Artists" type="string"/>
+        <property name="SpaceID" column="SpaceID" type="string"/>
+        <property name="RecommendProductID" column="RecommendProductID" type="string"/>
+        <property name="AttentionCount" column="AttentionCount" type="integer"/>
+        <property name="FanCount" column="FanCount" type="integer"/>
+        <property name="ShareCount" column="ShareCount" type="integer"/>
+        <property name="InformationCount" column="InformationCount" type="integer"/>
+        <property name="AttitudeCount" column="AttitudeCount" type="integer"/>
+        <property name="CommentCount" column="CommentCount" type="integer"/>
+        <property name="Company" column="Company" type="string"/>
+        <property name="TypeID" column="TypeID" type="integer"/>
+         <property name="OpenTime" column="OpenTime" type="string"/>
+    </class>
+</hibernate-mapping>

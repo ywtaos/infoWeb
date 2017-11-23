@@ -1,0 +1,32 @@
+﻿<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<mapping resource="chinsoft/entity/Member.hbm.xml" />
+		<mapping resource="chinsoft/entity/Attention.hbm.xml" />
+		<mapping resource="chinsoft/entity/Favorite.hbm.xml" />
+		<mapping resource="chinsoft/entity/GroupMenu.hbm.xml" />
+		<mapping resource="chinsoft/entity/Dict.hbm.xml" />
+		<mapping resource="chinsoft/entity/Supply.hbm.xml" />
+		<mapping resource="chinsoft/entity/Ad.hbm.xml" />
+		<mapping resource="chinsoft/entity/Information.hbm.xml" />
+		<!-- 
+			<mapping resource="chinsoft/entity/Report.hbm.xml" />
+			<mapping resource="chinsoft/entity/Product.hbm.xml" />
+			<mapping resource="chinsoft/entity/Exhibit.hbm.xml" />
+			<mapping resource="chinsoft/entity/Recommend.hbm.xml" />
+			<mapping resource="chinsoft/entity/Work.hbm.xml" />		
+			<mapping resource="chinsoft/entity/Trace.hbm.xml" />														
+		 -->
+		<mapping resource="chinsoft/entity/Share.hbm.xml" />
+		<mapping resource="chinsoft/entity/Attitude.hbm.xml" />
+		<mapping resource="chinsoft/entity/Comment.hbm.xml" />
+		<mapping resource="chinsoft/entity/Attachment.hbm.xml" />		
+		<mapping resource="chinsoft/entity/Subject.hbm.xml" />		
+		<mapping resource="chinsoft/entity/SubjectInvite.hbm.xml" /> 
+		<mapping resource="chinsoft/entity/ShareLog.hbm.xml" />	
+		<mapping resource="chinsoft/entity/Rate.hbm.xml" />
+		<mapping resource="chinsoft/entity/Location.hbm.xml" />		
+	</session-factory>
+</hibernate-configuration>

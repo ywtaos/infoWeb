@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="chinsoft.entity.ShareLog" table="ShareLog">
+       <id name="ID" column="ID" type="string">
+            <generator class="uuid"/>
+        </id>
+       <property name="PubMemberID" column="PubMemberID" type="string"/>
+       <property name="ShareLogCategoryID" column="ShareLogCategoryID" type="integer"/>
+       <property name="ShareLogTargetID" column="ShareLogTargetID" type="integer"/>
+       <property name="PubDate" column="PubDate" type="calendar"/>
+       <property name="ShareID" column="ShareID" type="string"/>
+    </class>
+</hibernate-mapping>

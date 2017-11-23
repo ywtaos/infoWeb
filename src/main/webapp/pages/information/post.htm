@@ -1,0 +1,22 @@
+<script src="../information/post.js"></script>
+<script src="../information/common.js"></script>
+<form id="form_information_post" class="form_template">
+<input type="hidden" id="ID"/>
+<h1></h1>
+
+<label class='Common_Title'></label><h2><input type='text' id='title'/></h2>
+
+<label class='Common_PubDate'></label><h2><input type='text' required id='pubDate'/></h2>
+
+<label class="Common_Category clear"></label><h2><input id="categoryID" type="hidden" required /></h2>
+
+<label class="Information_Hot"></label><h2><input id="hotID" type="hidden" required /></h2>
+
+<label class="Information_IsFocus"></label><h2><input id="isFocusID" type="hidden" required /></h2>
+
+<label class='Common_Content clear'></label><h3><div id="content_container"></div><textarea id='content' style="width:722px;display:none;"/></h3>
+
+<div class="operation">
+	<a class="Button_Submit"></a> <a class="Button_Cancel"></a>
+</div>
+</form>

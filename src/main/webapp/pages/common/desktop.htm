@@ -1,0 +1,182 @@
+<script src="../common/desktop.js"></script>
+
+<div id="main_left">
+	<div class="index-inbox-left">
+		<div class="index-ratebox">
+			<div class="index-tubiao">
+				<h3><a>资讯状况</a></h3>
+				<div class="percentBox">
+					<div id="bg" class="bg0"></div> 
+					<div id="txt" class="pertxt"></div> 
+				</div>
+				<p>今日新消息<span id="alreadyAuditing" style="margin-left:5px;"></span></p>
+				<p>今日未审核<span id="unAuditing" style="margin-left:5px;"></span></p>
+			</div>
+			<div class="tab" id="dueWarn">
+				<ul class="nav">
+					<li class="nav-one"><a href="#d1" class="current">最新公告</a></li>
+				</ul>
+				<div class="list-wrap" >
+					<ul id="d1">
+						<div class="index-biaoge" id="AnnouncementResultDeskTop" style="margin-top:-7px;"></div>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+
+		<!--<img src="/upload/data/1.png" style="width:1300px;" style="float:left;margin-top:30px;">-->
+		<!-- <div class="index-pingtaibox clear">
+			<div style="width:30%;float:left;">
+				<div id="containerBranch"></div>
+			</div>
+			<div style="width:70%;float:left;">
+				<div id="containerSalesMember"></div>
+			</div>
+		</div> -->
+
+	  </div>
+	</div>
+</div>
+
+
+<div id="main_right">
+	<div class="info">
+		<img src="/themes/default/images/moren.jpg">
+		<div class="richinfo">
+			<span class="nick"></span><br>
+			<div id="role"></div>   
+			<div id="logtime">上次登录时间：<span>2015年9月5日 13:39</span></div>
+		</div>
+	</div>
+	<div class="tab" id="notice">
+		<ul class="nav">
+			<li class="nav-one"><a href="#t1" class="current">小助手</a></li>
+		</ul>
+		<div class="list-wrap" >
+			<ul id="KnowledgeResultDeskTop"></ul>
+		</div>
+	</div>
+</div>
+<script id="AnnouncementTemplateDeskTop" type="text/html">
+	<%
+	for(i = 0; i < data.length; i ++) {
+		var row = data[i];
+	%>
+	<li id="<%=row.ID%>" onclick="openAnnouncementView('<%=row.ID%>')" >
+	<span style="width:170px;display:inline-block;"><%=row.announcementTitle%></span>
+	<span style="float:right;margin-right:10px;"><%=CCore.formatDate(row.pubDate)%></span>
+	<% 
+	if(CCore.getDays(row.pubDate,CCore.getNow())<=3)
+	{
+	%>
+		<i class="new"></i>
+	<%}%>
+	</li>
+	<%}%>
+	
+	<%
+	if(data.length>0){
+	%>
+		<li id="<%=data[0].categoryID%>"><a href="javascript:void(0)" class="fr" id="moreAnnouncementAdvance">更多></a></li>
+	<%}%>
+</script>
+<script id="KnowledgeResultTemplateAdvance" type="text/html">
+	<%
+	for(i = 0; i < data.length; i ++) {
+		var row = data[i];
+	%>
+	<li id="<%=row.ID%>" onclick="CDesktop.openKnowledgeView('<%=row.ID%>')">
+	<span style="width:300px;display:inline-block;"><%=row.manipulationProgram%></span>
+	<span style="width:100px;display:inline-block;"><%=row.insuranceTypeName%></span>
+	<span style="float:right;margin-right:10px;"><%=CCore.formatDate(row.pubDate)%></span>
+	<% 
+	if(CCore.getDays(row.pubDate,CCore.getNow())<=3)
+	{
+	%>
+		<i class="new"></i>
+	<%}%>
+	</li>
+	<%}%>
+    <%
+    if(data.length>0){
+    %>
+    <li id="<%=data[0].categoryID%>"><a href="javascript:void(0)" class="fr" id="moreKnowledgeAdvance">更多></a></li>
+    <%}%>
+</script>
+
+<script id="CarBillTemplateDeskTop" type="text/html">
+	<table class="bordered">
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>保单号</th>
+				<th>车牌号</th>
+				<th>被保险人</th>
+				<th>业务员</th>
+				<th>业务员电话</th>
+				<th>起保日期</th>
+				<th>到期天数</th>
+			</tr>
+		</thead>
+		<tbody>
+		<%
+		var length=9;
+		if(data.length<9){
+			length=data.length;
+		}
+		for(i = 0; i < length; i ++) {
+			var row = data[i];
+		%>
+			<tr id="<%=row.ID%>" >
+				<td class="center"><%=i+1%></td>
+				<td class="center"><%=row.billNumber%></td>
+				<td class="center link"><%=row.car.carNumber%></td>
+				<td class="center"><%=row.car.customerName%></td>
+				<td class="center"><%=row.salesMemberName%></td>
+				<td class="center"><%=row.salesMemberTel%></td>
+				<td class='center'><%=CCore.formatDate(row.startDate)%></td>
+				<td class='center' style="color:<%=row.styleColor%>"><%=row.daoQiDays%></td>
+			</tr>
+		<%}%>
+		</tbody>
+	</table>
+	<a class="index-more moreCarbill" href="javascript:void(0)">更多</a>
+</script>
+
+<script id="PropertyBillResultTemplateTop" type="text/html">
+	<table class="bordered">
+		<tr>
+			<th>#</th>
+			<th class='PropertyBill_InsuranceNumber'></th>
+			<th class='PropertyBill_SalesMember'></th>
+			<th class='PropertyBill_CustomerName'></th>
+			<th class='PropertyBill_InsuranceDate'></th>
+			<th class='PropertyBill_StartDate'></th>
+			<th class='PropertyBill_InsuranceCompany'></th>
+			<th class='PropertyBill_InsuranceAmount'></th>
+			<th class='PropertyBill_InvoiceFee'></th>
+			<th class='PropertyBill_PaidPayment'></th>
+			<th class='PropertyBill_PaymentType'></th>
+		</tr>
+		<%
+		for(i = 0; i < data.length; i ++) {
+			var row = data[i];
+		%>
+		<tr id="<%=row.ID%>" style="color:<%=row.styleColor%>">
+			<td class="center"><%=i+1%></td>
+			<td ><%=row.insuranceNumber%></td>
+			<td><%=row.salesMemberName%></td>
+			<td><%=row.customerName%></td>
+			<td class='center'><%=CCore.formatDate(row.insuranceDate)%></td>
+			<td class='center'><%=CCore.formatDate(row.startDate)%></td>
+			<td><%=row.insuranceCompanyName%></td>
+			<td><%=row.insuranceAmount%></td>
+			<td><%=row.invoiceFee%></td>
+			<td><%=row.paidPayment%></td>
+			<td><%=row.paymentTypeName%></td>
+		</tr>
+		<%}%>
+	</table>
+</script>
+	

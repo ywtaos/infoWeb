@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="chinsoft.entity.Comment" table="Comment">
+       <id name="ID" column="ID" type="string">
+            <generator class="uuid"/>
+        </id>
+       <property name="ShareID" column="ShareID" type="string"/>
+       <property name="Content" column="Content" type="string"/>
+       <property name="AttachmentIDs" column="AttachmentIDs" type="string"/>
+       <property name="IsAnonymous" column="IsAnonymous" type="integer"/>
+       <property name="Ip" column="Ip" type="string"/>
+       <property name="PubDate" column="PubDate" type="calendar"/>
+       <property name="PubMemberID" column="PubMemberID" type="string"/>
+       <property name="PubMemberName" column="PubMemberName" type="string"/>
+       <property name="ObjID" column="ObjID" type="string"/>
+       <property name="GroupID" column="GroupID" type="integer"/>
+       <property name="CategoryID" column="CategoryID" type="integer"/>
+       <property name="ToMemberID" column="ToMemberID" type="string"/>
+    </class>
+</hibernate-mapping>

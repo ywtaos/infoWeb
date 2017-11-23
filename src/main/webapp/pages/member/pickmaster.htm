@@ -1,0 +1,22 @@
+﻿<script src="../member/pickmaster.js"></script>
+<div id="MasterResult"></div>
+<script id="MasterResultTemplate" type="text/html">
+<%
+for(i = 0; i < data.length; i ++) {
+	var row = data[i];
+%>
+<%=row.name%>
+<table class="list_result">
+	<%
+	for(j = 0; j < row.masters.length; j ++) {
+		var master = row.masters[j];
+	%>
+	<tr id="<%=master.ID%>" name="<%=master.name%>">
+		<td class="center se"><%=master.name%></td>
+		<td class="center"><a class="Button_Select"></a></td>
+	</tr>
+	<%}%>
+</table>
+<%}%>
+</script>
+

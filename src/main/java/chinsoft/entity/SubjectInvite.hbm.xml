@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="chinsoft.entity.SubjectInvite" table="SubjectInvite">
+       <id name="ID" column="ID" type="string">
+            <generator class="uuid"/>
+        </id>
+       <property name="PubMemberID" column="PubMemberID" type="string"/>
+       <property name="ToMemberID" column="ToMemberID" type="string"/>
+       <property name="SubjectID" column="SubjectID" type="string"/>
+        <property name="PubDate" column="PubDate" type="calendar"/>
+    </class>
+</hibernate-mapping>

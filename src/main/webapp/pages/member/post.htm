@@ -1,0 +1,86 @@
+<script src="../member/post.js"></script>
+<script src="../member/list.js"></script>
+<form id="form_member_post" class="form_template">
+	<input type="hidden" name="ID" id="ID" />
+	<h1></h1>
+	<label class="Member_Airport"></label>
+	<h2>
+		<input type='hidden' id='airPort' /> <input type='text'
+			id='airPortName' class="pick" />
+	</h2>
+
+	<label class="Member_Group"></label>
+	<h2>
+		<input id="groupID" type="hidden" required />
+	</h2>
+	<label class="Member_Name"></label>
+	<h2>
+		<input type="text" id="name" />
+	</h2>
+	<label class="Member_Username"></label>
+	<h2>
+		<input type="text" id="username" required /><span id="message"
+			class="red"></span>
+	</h2>
+
+	<label class="Member_Password"></label>
+	<h2>
+		<input id="password" type="password" required />
+	</h2>
+	<label class="Member_NewPasswordConfirm"></label>
+	<h2>
+		<input id="verifyPassword" type="password" required />
+	</h2>
+	<label class="Member_Mobile"></label>
+	<h2>
+		<input type="text" id="mobile" />
+	</h2>
+	<label class="Member_Tel"></label>
+	<h2>
+		<input type="text" id="tel" />
+	</h2>
+
+	<label class="Member_Wechat"></label>
+	<h2>
+		<input type="text" id="wechat" />
+	</h2>
+
+	<label class="Member_Email"></label>
+	<h2>
+		<input type="text" id="email" />
+	</h2>
+
+	<label class="Member_Typeid"></label>
+	<h2>
+		<input id="typeID" type="hidden" />
+	</h2>
+
+
+	<label class="Member_Opentime"></label>
+	<h2>
+		<input type="text" id="opentime" />
+	</h2>
+
+	<label class="Member_Address"></label>
+	<h2 style="width: 710px;">
+		<input type="text" id="address" />
+	</h2>
+
+	<label class="Member_Description clear"></label>
+	<h3>
+		<textarea id="description"></textarea>
+	</h3>
+
+	<label class="Member_Memo"></label>
+	<h2 style="width: 710px;">
+		<input type="text" id="memo" />
+	</h2>
+
+	<label class='Common_Attachment clear'></label>
+	<h3 style="width: 300px;height:300px">
+		<input  type='hidden' id='imageID' />
+	</h3>
+	<div class="operation">
+		<a class="Button_Submit"></a> <a class="Button_Cancel"></a>
+	</div>
+</form>

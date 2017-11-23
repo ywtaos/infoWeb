@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="chinsoft.entity.Supply" table="Supply">
+       <id name="ID" column="ID" type="string">
+            <generator class="uuid"/>
+        </id>
+       <property name="Code" column="Code" type="string"/>
+       <property name="Name" column="Name" type="string"/>
+       <property name="LicenseNumber" column="LicenseNumber" type="string"/>
+       <property name="LicenseTerm" column="LicenseTerm" type="string"/>
+       <property name="Tax" column="Tax" type="string"/>
+       <property name="ValidityOfLicense" column="ValidityOfLicense" type="string"/>
+       <property name="PubMemberID" column="PubMemberID" type="string"/>
+       <property name="PubDate" column="PubDate" type="timestamp"/>
+    </class>
+</hibernate-mapping>

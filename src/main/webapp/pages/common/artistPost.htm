@@ -1,0 +1,39 @@
+<script src="../common/artistPost.js"></script>
+
+
+<!--编辑艺术家开始-->
+<div id="myModalMemberDescription" class="reveal-modal">
+	<div class="logo_zc">
+		<a href="index.html"><img src="/themes/view/images/logo_zc.jpg" /></a>
+	</div>
+	<div class="logo_word2">个人信息</div>
+	<div class="form_zc" id="_member">
+		<span class="logo_image">我 的 头 像</span>
+		<div>
+			<input id="imageID" required="true" type="hidden"
+				th:value="${member.imageID}"></input>
+		</div>
+
+		<div class="height10"></div>
+
+		<span class="logo_name">我 的 昵 称</span>
+		<div id="memberName" class="memberName">
+			<input class="membername" type="text" id="membername"
+				th:value="${member.name}" />
+		</div>
+		<span class="logo_address">我 的 地 址</span>
+		<div id="memberAddress" class="memberAddress">
+			<input class="address" type="text" id="address"
+				th:value="${member.address}" />
+		</div>
+		<span class="logo_content">我 的 简 介</span>
+
+		<textarea class="password" id="memberDescription" type="text"
+			th:text="${member.description}"></textarea>
+		<input id="btnSubmitDescription" class="tijiao" type="button"
+			value="提交" />
+	</div>
+	<a class="close-reveal-modal">&#215;</a>
+</div>
+</div>
+<!--编辑艺术家结束-->

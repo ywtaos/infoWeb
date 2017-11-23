@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="OFF">
+<Properties>
+ 
+<Property name="log-path">../logs/</Property>
+
+</Properties>
+	<appenders>
+		<!-- log4j2监听器 -->
+		<!-- 开启DEBUG启动模式，不需要情况下可注释 -->
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout pattern="%d{yyyy/MM/dd HH:mm:ss} - %level - %c-%M[%L]: %m%n" />
+		</Console>
+	
+		<RollingFile name="RollingFile" fileName="${log-path}/dams.log"
+			filePattern="${log-path}/dams-%d{yyyy/MM/dd}-%i.log">
+			<PatternLayout>
+				<pattern>%d{yyyy/MM/dd HH:mm:ss} - %level - %c-%M[%L]: %m%n</pattern>
+			</PatternLayout>
+			<Policies>
+				<SizeBasedTriggeringPolicy size="5MB" />
+			</Policies>
+			<DefaultRolloverStrategy max="20" />
+		</RollingFile>
+
+	</appenders>
+	<loggers>
+		<root level="DEBUG">
+			<appender-ref ref="Console" />
+			<appender-ref ref="RollingFile" />
+		</root>
+		<logger name="log4jdbc.log4j2" level="DEBUG" additivity="false">
+			<MarkerFilter marker="LOG4JDBC_JDBC" onMatch="DENY"
+				onMismatch="NEUTRAL" />
+			<appender-ref ref="Console" />
+			<appender-ref ref="RollingFile" />
+		</logger>
+	</loggers>
+</configuration>

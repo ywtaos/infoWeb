@@ -1,0 +1,32 @@
+<script src="../ad/common.js"></script>
+<script src="../ad/list.js"></script>
+<form id="form_memo_post" class="form_template">
+	<div id="MemberSearch" class="list_search">
+		<a class="Button_ShowAd btn btn-default navbar-btn" href="../ad/show.htm" target="_blank"></a>
+	</div>
+	
+	<div id="AdResult"></div>
+	<script id="AdResultTemplate" type="text/html">
+	<table class="list_result table">
+		<tr> 
+			<th class='Ad_ID'>广告编号</th>
+			<th class='Ad_Description'></th>			
+			<th class=''>广告内容</th>							
+			<th class='Ad_ImageUrl'></th>
+			
+		</tr>
+		<%
+		for(i = 0; i < data.length; i ++) {
+			var row = data[i];
+		%>
+		<tr id="<%=row.ID%>">
+			<td><%=row.ID%></td>
+			<td><%=row.description%></td>
+			<td><input type='text' id='content_<%=row.ID%>' value='<%=row.content%>' /></td>		           
+			<td style='padding-top:5px;'><input type='hidden' id='imageID_<%=row.ID%>' value='<%=row.imageID%>' /></td>
+			
+		</tr>
+		<%}%>
+	</table>
+</script>
+</form>

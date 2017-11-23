@@ -1,0 +1,38 @@
+<script src="../location/common.js"></script>
+<script src="../location/list.js"></script>
+<div id="LocationSearch" class="list_search">
+	<label class="Common_Keyword"/><h2><input type="text" id="searchKeyword"/></h2>
+	<input type="hidden" id="searchLng" value="0.0"/>
+	<input type="hidden" id="searchLat" value="0.0"/>
+	<a class="Button_Search"/>
+</div>
+<div id="LocationCommand" class="list_command">
+	<a class="Button_Remove" />
+	<a class="Button_Add" />
+</div>
+<div id="LocationResult"></div>
+<script id="LocationResultTemplate" type="text/html">
+	<table class="list_result">
+		<tr>
+			<th class="check"><input type="checkbox" onclick="CCore.checkAll('chkRow', this.checked);"/></th>
+			<th class='Common_Name'></th>
+			<th class='Location_Address'></th>				
+			<th class='Location_Lng'></th>
+			<th class='Location_Lat'></th>			
+			<th class="Button_Edit"></th>
+		</tr>
+		<%
+		for(i = 0; i < data.length; i ++) {
+			var row = data[i];
+		%>
+		<tr class="row<%=row.ID%>" id="<%=row.ID%>">
+			<td class="center check"><input type="checkbox" value="<%=row.ID%>" name="chkRow"/></td>
+			<td class='view'><%=row.name%></td>
+			<td ><%=row.address%></td>				
+			<td><%=row.lng%></td>
+			<td><%=row.lat%></td>				
+			<td class="center"><a class="Button_Edit"></a></td>
+		</tr>
+		<%}%>
+	</table>
+</script>

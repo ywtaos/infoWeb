@@ -1,0 +1,37 @@
+
+<script src="../comment/list.js"></script>
+<form id="form_memo_post" class="form_template">
+	
+	<div id="CommentCommand" class="list_command">
+	   
+		<a class="Button_Remove" ></a>
+		
+	</div>
+	<div id="CommentResult"></div>
+	<script id="CommentResultTemplate" type="text/html">
+	<table class="list_result table">
+		<tr> 
+			<th class="check"><input type="checkbox" onclick="CCore.checkAll('chkRow', this.checked);"/></th>
+			
+			<th class='Comment_Content'></th>
+			<th class='Comment_Time'></th>
+			<th class='Comment_Pubmember'></th>
+			
+			
+		</tr>
+		<%
+		for(i = 0; i < data.length; i ++) {
+			var row = data[i];
+		%>
+		<tr id="<%=row.ID%>">
+			<td class="center check"><input type="checkbox" value="<%=row.ID%>" name="chkRow"/></td>
+			
+			<td><input type='text' id='content_<%=row.ID%>' value='<%=row.content%>' /></td>
+			<td><input type='text' id='pubDate' value='<%=row.pubDateStr%>' /></td>
+			<td><input type='text' id='pubMember' value='<%=row.pubMember.name%>' /></td>
+			
+		</tr>
+		<%}%>
+	</table>
+</script>
+</form>

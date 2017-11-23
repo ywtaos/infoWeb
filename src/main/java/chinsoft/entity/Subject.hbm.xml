@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="chinsoft.entity.Subject" table="Subject">
+        <id name="ID" column="ID" type="string">
+            <generator class="uuid"/>
+        </id>
+        <property name="PubMemberID" type="string">
+            <column name="PubMemberID"/>
+        </property>
+        <property name="PubDate" type="date">
+            <column name="PubDate" />
+        </property>
+        <property name="IsTopID" type="integer">
+            <column name="IsTopID"/>
+        </property>
+        <property name="Title" type="string">
+            <column name="Title" />
+        </property>
+        <property name="ReadStatus" type="integer">
+            <column name="ReadStatus"/>
+        </property>
+        <property name="FanCount" type="integer">
+            <column name="FanCount"/>
+        </property>
+         <property name="ReadCount" type="integer">
+            <column name="ReadCount"/>
+        </property>
+          <property name="ShareCount" type="integer">
+            <column name="ShareCount"/>
+        </property>
+         <property name="AttentionCount" type="integer">
+            <column name="AttentionCount"/>
+        </property>
+         <property name="AttitudeCount" type="integer">
+            <column name="AttitudeCount"/>
+        </property>                   
+         <property name="ImageAttachmentIDs" type="string">
+            <column name="ImageAttachmentIDs" />
+        </property>
+        <property name="Description" type="string">
+            <column name="Description" />
+        </property>
+    </class>
+</hibernate-mapping>

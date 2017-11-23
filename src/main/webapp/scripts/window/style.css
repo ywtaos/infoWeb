@@ -1,0 +1,21 @@
+﻿ #window_title{float:left;text-align:center;padding-top:5px;font-size:18px;font-weight:bold;overflow:hidden;}
+.dialog-loading {background:url(img/common_loading.gif) no-repeat center; width:100%; height:100%}
+.dialog-mask{filter:alpha(opacity=50);opacity:0.5;border:0px; background:#000; margin:0px; padding:0px; position:absolute; top:0px; left:0px;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod="scale", src="/scripts/window/img/dialog_bg.png"); _background:none;}
+.dialog-button{clear: both;border-left:solid 6px #fdfdfd;border-right:solid 6px #fdfdfd;}
+.dialog-button input{overflow:visible; overflow-y:hidden;}
+.dialog-content{text-align:left; clear:both; overflow:auto;color:#000;border-left:solid 6px #fdfdfd;border-right:solid 6px #fdfdfd;}
+
+.weedialog{width:300px;z-index:-1;}
+.weedialog .dialog-header{height:34px; position:relative; cursor:move;background:#e7f9fb;}
+
+.weedialog .dialog-content{clear:both; padding:2px; background:#fff; text-align:left; overflow-y:auto; overflow-x:hidden;min-height:35px;}
+
+.weedialog .dialog-button{clear:both; background:#fff;padding-bottom:8px;}
+.weedialog .dialog-button{text-align:right; font-size:12px; padding-right:6px; _padding-right:2px;}
+
+.weedialog .dialog-cancel,.weedialog .dialog-ok{margin-bottom:5px;margin-right:5px;background:#20aae8; height:30px; line-height:30px; color:#fff;cursor:pointer; padding:5px 15px;}
+.weealert .dialog-cancel{display:none;}
+.weedialog .dialog-cancel{border:1px solid #999;}
+
+.weedialog .dialog-close{float:right;cursor:pointer;margin:0px;	height:24px; width:24px; background:url(img/dialog_close1.gif) no-repeat; margin-right:6px;margin-top:5px;}
+.weedialog .dialog-close:hover{background:url(img/dialog_close2.gif) no-repeat; }

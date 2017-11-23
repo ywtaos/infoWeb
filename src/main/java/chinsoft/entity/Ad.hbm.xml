@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping >
+    <class name="chinsoft.entity.Ad" table="Ad">
+       <id name="ID" column="ID" type="string">
+            <generator class="uuid"/>
+        </id>
+       <property name="Code" column="Code" type="string"/>
+       <property name="Description" column="Description" type="string"/>
+       <property name="ImageID" column="ImageID" type="string"/>
+       <property name="VisitUrl" column="VisitUrl" type="string"/>
+       <property name="Content" column="Content" type="string"/>
+       <property name="Width" column="Width" type="integer"/>
+       <property name="Height" column="Height" type="integer"/>
+       <property name="SequenceNo" column="SequenceNo" type="integer"/>
+       <property name="PubMemberID" column="PubMemberID" type="string"/>
+       <property name="Memo" column="Memo" type="string"/>
+       <property name="Position" column="Position" type="string"/>
+       <property name="LocationID" column="LocationID" type="string"/>
+       <property name="FromDate" column="FromDate" type="date" />
+       <property name="ToDate" column="ToDate" type="date"  />
+    </class>
+</hibernate-mapping>

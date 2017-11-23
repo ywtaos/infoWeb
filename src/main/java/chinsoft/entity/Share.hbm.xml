@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="chinsoft.entity.Share" table="Share">
+       <id name="ID" column="ID" type="string">
+            <generator class="uuid"/>
+        </id>
+       <property name="Title" column="Title" type="string"/>
+       <property name="Content" column="Content" type="string"/>
+       <property name="StatusID" column="StatusID" type="integer"/>
+       <property name="AttitudeCount" column="AttitudeCount" type="integer"/>
+       <property name="CommentCount" column="CommentCount" type="integer"/>
+       <property name="RelayCount" column="RelayCount" type="integer"/>
+       <property name="Tag" column="Tag" type="integer"/>
+       <property name="AttachmentIDs" column="AttachmentIDs" type="string"/>
+       <property name="IsPublic" column="IsPublic" type="integer"/>
+       <property name="PubDate" column="PubDate" type="calendar"/>
+       <property name="PubMemberID" column="PubMemberID" type="string"/>
+       <property name="VideoImageAttachmentID" column="VideoImageAttachmentID" type="string"/>
+       <property name="IsRecommendID" column="IsRecommendID" type="integer"/>
+       <property name="IsTopID" column="IsTopID" type="integer"/>
+       <property name="CategoryID" column="CategoryID" type="integer"/>
+       <property name="Description" column="Description" type="string"/>
+       <property name="ImageIDs" column="ImageIDs" type="string"/>
+       <property name="TypeID" column="TypeID" type="int"/>
+       <property name="ShareParentID" column="ShareParentID" type="string"/>
+       <property name="ShareRootID" column="ShareRootID" type="string"/>
+       <property name="HotID" column="HotID" type="integer"/>
+       <property name="Address" column="Address" type="string"/>
+       <property name="Lng" column="Lng" type="string"/>
+       <property name="Lat" column="Lat" type="string"/>
+       <property name="AttentionCount" column="AttentionCount" type="integer"/>
+       <property name="IsFocusID" column="IsFocusID" type="integer"/>
+       <property name="LocationID" column="LocationID" type="string"/>
+      <!--
+       <property name="Url" column="Url" type="string"/>
+       <property name="Score" column="Score" type="double"/>
+       <property name="PartMemberIDs" column="PartMemberIDs" type="string"/>        
+       
+       <property name="CategoryIDs" column="CategoryIDs" type="integer"/>
+       <property name="Height" column="Height" type="string"/>
+       <property name="Width" column="Width" type="string"/>
+       <property name="Lengths" column="Lengths" type="string"/>
+       <property name="Year" column="Year" type="integer"/>
+       
+       <property name="ColorIDs" column="ColorIDs" type="string"/>
+       <property name="SalePrice" column="SalePrice" type="double"/>
+       <property name="MinPrice" column="MinPrice" type="double"/>
+       <property name="MaxPrice" column="MaxPrice" type="double"/>
+       <property name="MountID" column="MountID" type="string"/>
+       <property name="Author" column="Author" type="string"/>
+       -->
+       
+    </class>
+</hibernate-mapping>

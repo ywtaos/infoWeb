@@ -1,0 +1,20 @@
+<script src="../location/post.js"></script>
+<script src="../location/common.js"></script>
+<script src="../map/pick.js"></script>
+<form id="form_location_post" class="form_template">
+<input type="hidden" id="ID"/>
+<h1></h1>
+<!-- <label class='Common_'></label><h2><input type='text' required='true'  id='iD'/></h2> -->
+<label class='Common_Name'></label><h2><input type='text' id='name'/></h2>
+<label class='Location_Address'></label><h2><input type='text' id='address'/></h2>
+<!-- <label class='Location_Lng'></label><h2><input type='text' number='true'  id='lng'/></h2>
+<label class='Location_Lat'></label><h2><input type='text' number='true'  id='lat'/></h2> -->
+
+<label class='Location_Moduler clear' >地图标识</label>
+  <h2  class="mapPoints" ><input type='hidden' id='point' readonly='true' />
+  <div class="pointsTraces pick"  id='pointTraces'></div></h2>
+  
+<div class="operation">
+	<a class="Button_Submit"></a> <a class="Button_Cancel"></a>
+</div>
+</form>

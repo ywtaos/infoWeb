@@ -1,0 +1,46 @@
+<script src="../information/common.js"></script>
+<script src="../information/list.js"></script>
+<div id="InformationSearch" class="list_search">
+	<label class="Common_Keyword"></label>
+	<h2><input type="text" id="searchKeyword"/></h2>
+
+	<a class="Button_Search"></a>
+</div>
+<div id="InformationCommand" class="list_command">
+    <a class="Button_Add" ></a>
+	<a class="Button_Remove" ></a>
+	<a class="Button_Open" ></a>
+	<a class="Button_Close" ></a>
+</div>
+<div id="InformationResult"></div>
+<script id="InformationResultTemplate" type="text/html">
+	<table class="list_result">
+		<tr>
+			<th class="check"><input type="checkbox" onclick="CCore.checkAll('chkRow', this.checked);"/></th>
+			<th class='Common_Title'></th>		
+			<th class='Share_PubDate'></th>
+			<!--<th class='Common_Content'></th>-->
+			<th class='Common_Category'></th>
+			<th class='Information_Hot'></th>
+			<th class='Information_Status'></th>
+			<th class='Information_IsFocus'></th>
+			<th class="Button_Edit"></th>
+		</tr>
+		<%
+		for(i = 0; i < data.length; i ++) {
+			var row = data[i];
+		%>
+		<tr class="row<%=row.ID%>" id="<%=row.ID%>">
+			<td class="center check"><input type="checkbox" value="<%=row.ID%>" name="chkRow"/></td>
+			<td class='center'><%=row.title%></td>
+			<td class='center'><%=row.pubDate%></td>	
+			<!--<td class='center'><%=row.content%></td>-->
+			<td class='center'><%=row.categoryName%></td>
+			<td class='center'><%=row.hotName%></td>
+			<td class='center'><%=row.statusName%></td>
+			<td class='center'><%=row.isFocusName%></td>
+			<td class="center"><a class="Button_Edit"></a></td>
+		</tr>
+		<%}%>
+	</table>
+</script>

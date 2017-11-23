@@ -1,0 +1,82 @@
+
+<script src="../common/productPost.js"></script>
+<link href="../../themes/view/style.css" rel="stylesheet" media="screen">
+<link href="../../themes/view/moduler.css" rel="stylesheet" media="screen">  
+<link href="../../themes/view/mobile.css" rel="stylesheet" media="screen"> 
+<!--发布页开始-->
+<div id="myModalFabu" class="reveal-modal">
+	
+	<div id="mobile_box">
+	    <input type='hidden' required  id='ID'/>
+		<div>
+			<input id="imageIDs" required="true" type="hidden" ></input>
+		</div>
+	    <div class="height10"></div>
+	   	 
+	    <div class="ysp_name">艺术品名称</div>
+	    	<input id="name" class="ysp_name_input" type="text" />
+	    <div class="ysp_zj">作家</div>
+	    	<input id="author" class="ysp_zj_input" type="text" />
+	    <div  class="ysp_fgfl">风格分类</div>
+	 	 <h2><input type="hidden" id="categoryID" class="ysp_fgfl_input"/></h2>
+	    <div class="ysp_cc">尺寸</div>
+	    	<input id="length" class="ysp_cc_chang" type="text" /><input id="width" class="ysp_cc_kuan" type="text" />
+	    <div style="clear:both"></div>
+	    <div  class="ysp_czsj">创作时间</div>
+	      <input id="year" type="text" class="ysp_czsj_input">
+		    <!-- <select id="year" class="ysp_czsj_input">
+		     
+		    </select> -->
+	    <div class="ysp_scdna" id="ysp_scdna">色彩DNA</div>
+		    <input id="colorIDs" type="hidden" />
+		    	<div class="colors">
+		        	<!--<li th:each="color:${productColors}" ><a th:class="${color.extension}"></a></li>-->
+				<g>
+				 <div class="ysp_scdna_box" id="ys_scdna_box">
+			    	<ul class="ysp_color">
+			             
+			        </ul>
+              </div>
+			</g>
+			
+			<i id="colors_check"  style="display:none;"></i>
+		             <div style="clear:both"></div>
+		   </div>
+		    
+	    <div class="ysp_gzqj">估值区间</div>
+	        <input id="minPrice" class="ysp_gzqj_zd" type="text" />
+	      <div class="ysp_gzqj_xian"></div>
+	        <input id="maxPrice" class="ysp_gzqj_zg" type="text" />
+	       <div style="clear:both"></div>
+	    <div class="ysp_sj">售价</div>
+		    <input id="salePrice" class="ysp_sj_input" type="text" />
+		   <div class="ysp_sj_danwei">/元</div>
+		    <div style="clear:both"></div>
+	    <div class="ysp_xxms">详细描述</div>
+	    	<textarea id="description" class="ysp_xxms_texta" type="text" ></textarea>	  
+		   <input class="ysp_xxms_qx" type="button" value="取消" />
+		   <!-- <input class="ysp_xxms_ll" type="button" value="浏览" />-->
+		    <input id="btuSubmitProduct" class="ysp_xxms_fb" type="button" value="发布" />
+		   <!-- <div class="ysp_xxms_3j" ></div>-->
+	    <div style="clear:both"></div>  
+    
+</div>
+     <a class="close-reveal-modal">&#215;</a>
+  
+</div>
+<!--发布页结束-->
+   <script  type="text/javascript"> 
+ 	     window.onload=function(){ 
+	//设置年份的选择 
+	    var myDate= new Date(); 
+	    var startYear=myDate.getFullYear()-50;//起始年份 
+	    var endYear=myDate.getFullYear()+50;//结束年份 
+	    var obj=document.getElementById('year') 
+	    for (var i=startYear;i<=endYear;i++) 
+	     { 
+	    obj.options.add(new Option(i,i)); 
+	    } 
+	    obj.options[obj.options.length-51].selected=1; 
+	   } 
+	
+   </script> 

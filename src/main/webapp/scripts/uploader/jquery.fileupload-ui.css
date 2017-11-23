@@ -1,0 +1,73 @@
+@charset "UTF-8";
+/*
+ * jQuery File Upload UI Plugin CSS 8.1
+ * https://github.com/blueimp/jQuery-File-Upload
+ *
+ * Copyright 2010, Sebastian Tschan
+ * https://blueimp.net
+ *
+ * Licensed under the MIT license:
+ * http://www.opensource.org/licenses/MIT
+ */
+
+.fileinput-button {
+	border:solid 1px #ccc;
+	width:45px;
+	height:20px;
+	background: url("images/select.png") no-repeat left center;
+	display:inline-block;
+	cursor: pointer;
+}
+.fileinput-button input {
+    opacity: 0;
+    filter: alpha(opacity=0);
+    cursor: pointer;
+    width:45px;
+}
+.fileupload-buttonbar .btn,
+.fileupload-buttonbar .toggle {
+  margin-bottom: 5px;
+}
+.files li{display:inline-block;}
+.files li a{font-size:12px;}
+.remove-file{background: url("images/remove.png") no-repeat left center;width:12px;height:12px;margin-right:25px;margin-left:2px;}
+.progress {
+  width:100px;
+  height:12px;
+  background-color:red;
+}
+.bar {
+  width:280px;height:12px;line-height:12px;
+}
+.hide{display:none;}
+.fileupload-loading {
+  float: right;
+  width: 32px;
+  height: 32px;
+  background: url(images/loading.gif) center no-repeat;
+  background-size: contain;
+  display: none;
+}
+.fileupload-processing .fileupload-loading {
+  display: block;
+}
+.files audio,
+.files video {
+  max-width: 300px;
+}
+
+@media (max-width: 767px) {
+  .fileupload-buttonbar .toggle,
+  .files .toggle,
+  .files .btn span {
+    display: none;
+  }
+  .files .name {
+    width: 50px;
+    word-wrap: break-word;
+  }
+  .files audio,
+  .files video {
+    max-width: 80px;
+  }
+}

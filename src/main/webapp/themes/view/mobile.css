@@ -1,0 +1,156 @@
+@charset "utf-8";
+img  {border: 0px;}
+*{margin:0;padding:0; }
+body{padding:0px;margin:0px;line-height:180%;font-size:12px;font-family:"Microsoft Yahei","Helvetica Neue",Helvetica,Arial,sans-serif; background: url(../images/bg.jpg) no-repeat repeat-x  }
+div,form,img,ul,li,dl,dt,dd{margin:0;padding:0;border:0;/* text-align:left; */}
+table,td,tr,th{font-size:12px;}
+.clear {clear:both;}
+.hv{ width:100%; height:20px;}
+ul{ margin:0; padding:0;}
+li {list-style:none;list-style-type:none;}
+a { color: #000000;text-decoration:none;}
+.share_comment{height: 30px;width: 598px;margin-top: 10px;display: none;}
+.share_comment .fabiao{width: 76px;
+	    height: 30px;
+	    line-height: 30px;
+	    text-align: center;
+	    font-size: 14px;
+	    color: #FFF;
+	    background: #000000;
+	    float:left;   
+	    margin:10px 0 0 10px; 
+	   }
+.share_comment .fabiao:hover{background: #008040;}	   
+.share_comment .qxfabiao{width: 76px;
+		 height: 30px;
+		 line-height: 30px;
+		 text-align: center;
+		 font-size: 14px;
+		 color: #FFF;
+		 background: #c0c0c0;
+		 float:left;  
+		 margin:10px 0 0 423px;  
+}
+.share_comment .qxfabiao:hover{background: #008040;}
+h1,h2,h3,h4,h5{ font-size:12px; font-weight:normal;}
+input{color:#666;font-size:12px;}
+form, embed {display: inline;margin: 0;padding: 0;}
+.fl{ float:left;}
+.fr{ float:right;}
+.wrap{width:980px; margin:0 auto;}
+.clear{ clear:both;}
+.page{text-align:center; width:100%;}
+.page span{ float:left;  border:solid 1px #ccc; margin-left:2px; margin-right:2px; padding-left:10px; padding-right:10px;}
+.page a{ display:block; float:left; padding-left:10px; padding-right:10px; border:solid 1px #ccc; margin-left:2px; margin-right:2px;}
+.hv{ width:100%; margin:0 auto; height:10px; overflow:hidden}
+ .more{ height:30px; width:50px; display:block; float:right;filter:alpha(opacity=0); opacity:0}
+ 
+
+/*mobile_艺术品*/
+#mobile_box{ padding:10px;}
+.banner_keai{ width:100%;}
+.banner_keai img{width:100%;}
+.height10{ width:100%; height:10px;}
+.addimg{ width:100%; background:#000; height:56px; line-height:56px; text-align:center; color:#fff; font-size:1rem; cursor:pointer;}
+.ysp_name{ margin:10px 0; line-height:32px; height:32px; font-size:1.2rem; color:#787775;}
+.ysp_name_input{ width:100%; height:40px; line-height:40px; font-size:1rem; cursor:pointer; border:1px solid #a9a19f;}
+.ysp_zj{ margin:10px 0; line-height:32px; height:32px; font-size:1.2rem; color:#787775;}
+.ysp_zj_input{ width:100%; height:40px; line-height:40px; font-size:1rem; cursor:pointer; border:1px solid #a9a19f;}
+.ysp_fgfl{ margin:10px 0; line-height:32px; height:32px; font-size:1.2rem; color:#787775;}
+.ysp_fgfl_input{ width:100%; height:40px; line-height:40px; font-size:1rem; cursor:pointer; border:1px solid #a9a19f;}
+.ysp_cc{ margin:10px 0; line-height:32px; height:32px; font-size:1.2rem; color:#787775;}
+.ysp_cc_chang{ width:40%; height:40px; float:left; line-height:40px; font-size:1rem; cursor:pointer; border:1px solid #a9a19f;}
+.ysp_cc_kuan{ width:40%; height:40px; float:right; line-height:40px; font-size:1rem; cursor:pointer; border:1px solid #a9a19f;}
+
+.ysp_czsj{ margin:10px 0; line-height:32px; height:32px; font-size:1.2rem; color:#787775;}
+.ysp_czsj_input{ width:100%; height:40px; line-height:40px; font-size:1rem; cursor:pointer; border:1px solid #a9a19f;}
+
+.ysp_scdna{ margin:65px 0 10px 0; line-height:32px; height:32px; font-size:1.2rem; color:#787775;}
+/*.ysp_scdna_input{ width:100%; height:40px; line-height:40px; font-size:1rem; cursor:pointer; border:1px solid #a9a19f;}*/
+
+.ysp_scdna_box{ width:100%;}
+.ysp_scdna_box ul li{width: 16.85%; margin-right:2.23%; margin-top:12px; height:42px; float:left;}
+.ysp_scdna_box ul li a{ display:block; width:100%; height:42px; cursor:pointer;}
+
+.ysp_color1{ background:#e60012;}
+.ysp_color2{ background:#f39800;}
+.ysp_color3{ background:#fff100;}
+.ysp_color4{ background:#8fc31f;}
+.ysp_color5{ background:#009944;}
+.ysp_color6{ background:#009e96;}
+.ysp_color7{ background:#00a0e9;}
+.ysp_color8{ background:#0068b7;}
+.ysp_color9{ background:#1d2088;}
+.ysp_color10{ background:#920783;}
+.ysp_color11{ background:#e4007f;}
+.ysp_color12{ background:#e5004f;}
+.ysp_color13{ background:#000000;}
+.ysp_color14{ background:#FFFFFF;}
+.ysp_color15{ background:#808080;} 
+
+.ysp_gzqj{ margin:46px 0 18px 0; line-height:32px; height:32px; font-size:1.2rem; color:#787775;}
+.ysp_gzqj_zd{ width:40%; height:40px; float:left; line-height:40px; font-size:1rem; cursor:pointer; border:1px solid #a9a19f; text-align:center;}
+.ysp_gzqj_xian{width:10%; margin:0 2%; height:20px; float:left; border-bottom:1px solid #a9a19f;}
+.ysp_gzqj_zg{ width:40%; height:40px; float:left; line-height:40px; font-size:1rem; cursor:pointer; border:1px solid #a9a19f;text-align:center;}
+.ysp_sj{ margin:34px 0 14px 0; line-height:32px; height:32px; font-size:1.2rem; color:#787775;}
+.ysp_sj_input{ width:85%; float:left; height:40px; line-height:40px; font-size:1rem; cursor:pointer; border:1px solid #b9b5b6; background:#b9b5b6;}
+.ysp_sj_danwei{ width:10%; float:right; height:40px; line-height:40px; font-size:1rem;}
+
+.ysp_xxms{ margin:38px 0 18px 0; line-height:32px; height:32px; font-size:1.2rem; color:#787775;}
+.ysp_xxms_texta{ width:100%; height:166px; line-height:40px; font-size:1rem; cursor:pointer; border:1px solid #a9a19f; margin-bottom:20px;}
+
+
+.ysp_xxms_qx{
+    width: 16.85%;
+    height:36px;
+    float: left;
+	background:#ece8e9;
+	color:#797576;
+	text-align:center;
+	border: none;
+}
+.ysp_xxms_ll{
+    width: 16.85%;
+    height:36px;
+		text-align:center;
+    float: left;
+	background:#ece8e9;
+	color:#797576;
+	border: none;
+	/* margin-left:38.57%; */
+}
+.ysp_xxms_fb{
+    width: 24.85%;
+    height:36px;
+    float: left;
+		text-align:center;
+	background:#2b2b2b;
+	color:#fff;
+	border: none;
+	margin-left:57.62%;
+}
+.ysp_xxms_3j{
+    width: 6.75%;
+	text-align:center;
+    height:36px;
+    float: left;
+	margin-left:1px;
+	background:#2b2b2b url(images/3j.jpg) center center no-repeat ;
+	color:#fff;
+	border: none;
+	cursor:pointer;
+}
+/* 信息 */
+.inform_content{margin-top: 100px;width: 100%;height: 59.5%;}
+/* 分享 */
+/* .yibao_zan .xin{font-size: 22px;
+				float: left;
+				color:
+				margin-left: 13px;}
+.yibao_xinzan{color:#ff0000; }
+.yibao_xinzan:hover{color: #ffffff;}			
+.yibao_zan .xin_zan{font-size: 13px;float: left;color:#ff0000;} */
+/* .yibao_zan .xin_zan:hover{color: #ffffff;} */
+/* 分享分布页 */
+.lable_color .ysp_scdna_box{margin-left: -32px;} 
+

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+        xmlns="http://www.springframework.org/schema/beans"
+        xmlns:mvc="http://www.springframework.org/schema/mvc"
+        xmlns:aop="http://www.springframework.org/schema/aop"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:p="http://www.springframework.org/schema/p"
+        xmlns:context="http://www.springframework.org/schema/context"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+                            http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+                            http://www.springframework.org/schema/context
+                            http://www.springframework.org/schema/context/spring-context-4.0.xsd
+                            http://www.springframework.org/schema/mvc
+                            http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+                            http://www.springframework.org/schema/aop
+                            http://www.springframework.org/schema/aop/spring-aop-4.0.xsd">
+
+    <!-- 设置使用注解的类所在的jar包 -->
+    <context:component-scan base-package="chinsoft.controller" use-default-filters="false">
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+    <!-- 注册RequestMappingHandlerMapping 和RequestMappingHandlerAdapter 两个bean。-->
+
+    <aop:aspectj-autoproxy proxy-target-class="true"/>
+    <mvc:default-servlet-handler/>
+    <mvc:annotation-driven>
+        <mvc:message-converters>
+            <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+                <property name="objectMapper">
+                    <bean class="chinsoft.util.JsonObjectMapper"></bean>
+                </property>
+            </bean>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
+    <!-- thymeleaf框架配置 -->
+    <bean id="templateResolver"
+          class="org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver">
+        <property name="prefix" value="views/" />
+        <property name="suffix" value=".t" />
+        <property name="templateMode" value="HTML" />
+        <!-- 解决中文乱码 -->
+        <property name="characterEncoding" value="UTF-8"/>
+        <!-- 取消缓存，不用重启tomcat -->
+        <property name="cacheable" value="false" />
+    </bean>
+    <bean id="templateEngine"
+          class="org.thymeleaf.spring4.SpringTemplateEngine">
+        <property name="templateResolver" ref="templateResolver" />
+        <property name="additionalDialects">
+            <set>
+                <bean class="nz.net.ultraq.thymeleaf.LayoutDialect"/>
+            </set>
+        </property>
+    </bean>
+
+    <bean class="org.thymeleaf.spring4.view.ThymeleafViewResolver">
+        <property name="templateEngine" ref="templateEngine" />
+        <!-- 解决中文乱码 -->
+        <property name="characterEncoding" value="UTF-8"/>
+    </bean>
+    <bean id="utf8Charset" class="java.nio.charset.Charset"
+          factory-method="forName">
+        <constructor-arg value="UTF-8"/>
+    </bean>
+
+    <mvc:annotation-driven>
+        <mvc:message-converters>
+            <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+                <constructor-arg ref="utf8Charset"/>
+            </bean>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
+
+    <mvc:annotation-driven content-negotiation-manager="contentManager"/>
+    <bean id="contentManager" class="org.springframework.web.accept.ContentNegotiationManagerFactoryBean">
+        <property name="favorPathExtension" value="true"/>
+        <property name="ignoreAcceptHeader" value="true"/>
+        <property name="defaultContentType" value="application/json;charset=utf-8"/>
+        <property name="useJaf" value="false"/>
+        <property name="mediaTypes">
+            <map>
+                <entry key="json" value="application/json;charset=utf-8"/>
+                <entry key="html" value="text/html;charset=utf-8"/>
+                <entry key="xml" value="application/xml;charset=utf-8"/>
+            </map>
+        </property>
+    </bean>
+</beans>

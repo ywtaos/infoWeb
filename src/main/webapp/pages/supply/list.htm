@@ -1,0 +1,39 @@
+﻿<script src="../supply/list.js"></script>
+<div id="SupplySearch" class="list_search">
+	<label class="Common_Keyword"/><h2><input type="text" id="searchKeyword"/></h2>
+	<a class="Button_Search"/>
+</div>
+<div id="SupplyCommand" class="list_command">
+	<a class="Button_Remove" auth="MenuSupplyRemove"/>
+	<a class="Button_Add" />
+</div>
+<div id="SupplyResult"></div>
+<script id="SupplyResultTemplate" type="text/html">
+	<table class="list_result">
+		<tr>
+			<th class="check"><input type="checkbox" onclick="CCore.checkAll('chkRow', this.checked);"/></th>
+			<th class='Common_Code'></th>
+			<th class='Common_Name'></th>
+			<th class='Member_CompanyLicenseNo'></th>
+			<th class='Supply_LicenseTerm'></th>
+			<th class='Supply_Tax'></th>
+			<th class='Supply_ValidityOfLicense'></th>
+			<th class="Button_Edit"></th>
+		</tr>
+		<%
+		for(i = 0; i < data.length; i ++) {
+			var row = data[i];
+		%>
+		<tr id="<%=row.ID%>">
+			<td class="center check"><input type="checkbox" value="<%=row.ID%>" name="chkRow"/></td>
+			<td class='center'><%=row.code%></td>
+			<td><%=row.name%></td>
+			<td><%=row.licenseNumber%></td>
+			<td><%=row.licenseTerm%></td>
+			<td><%=row.tax%></td>
+			<td><%=row.validityOfLicense%></td>
+			<td class="center"><a class="Button_Edit" auth="MenuSupplyEdit"></a></td>
+		</tr>
+		<%}%>
+	</table>
+</script>

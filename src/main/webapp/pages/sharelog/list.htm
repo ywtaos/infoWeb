@@ -1,0 +1,42 @@
+<script src="../sharelog/common.js"></script>
+<script src="../sharelog/list.js"></script>
+<div id="ShareLogSearch" class="list_search">
+	<label class="Common_Keyword"/><h2><input type="text" id="searchKeyword"/></h2>
+	<label class='ShareLog_ShareLogCategory'/><h2><input type='hidden' id='searchShareLogCategoryID'/></h2>
+	<label class='ShareLog_ShareLogTarget'/><h2><input type='hidden' id='searchShareLogTargetID'/></h2>
+	<a class="Button_Search"/>
+</div>
+<div id="ShareLogCommand" class="list_command">
+	<a class="Button_Remove" auth="MenuShareLogRemove"/>
+	<a class="Button_Add" auth="MenuShareLogAdd"/>
+</div>
+<div id="ShareLogResult"></div>
+<script id="ShareLogResultTemplate" type="text/html">
+	<table class="list_result">
+		<tr>
+			<th class="check"><input type="checkbox" onclick="CCore.checkAll('chkRow', this.checked);"/></th>
+			<th class=''>用户</th>
+			<th class=''>用户操作</th>
+			<th class='Common_PubDate'></th>
+			<th class=''>类型</th>
+            <th class=''>分类</th>
+			<th class='ShareLog_ShareLogTarget'>原因</th>
+			<th class="Button_Edit"></th>
+		</tr>
+		<%
+		for(i = 0; i < data.length; i ++) {
+			var row = data[i];
+		%>
+		<tr class="row<%=row.ID%>" id="<%=row.ID%>">
+			<td class="center check"><input type="checkbox" value="<%=row.ID%>" name="chkRow"/></td>
+			<td class=''><%=row.pubMember.name%></td>
+			<td><%=row.shareLogCategoryName%></td>
+			<td class='center'><%=row.pubDateStr%></td>
+			<td><%=row.share.categoryName%></td>
+            <td><%=row.share.typeName%></td>
+			<td><%=row.shareLogTargetName%></td>
+			<td class="center"><a class="Button_Edit" auth="MenuShareLogEdit"></a></td>
+		</tr>
+		<%}%>
+	</table>
+</script>

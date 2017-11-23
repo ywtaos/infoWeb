@@ -1,0 +1,63 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="../../themes/default/style.css"/>
+<script type="text/javascript" src="../../scripts/cs/import.js"></script>
+<script type="text/javascript" src="dashboard.js"></script>
+</head>
+<body >
+<div id="left">
+	<div id="logo"></div>
+	<div id="menu"></div>
+	<div class="remind hide" id="msg_task">
+		<p>任务提醒<a class="delete">×</a></p>
+		<ul class="remind-list" >
+			<li><a >待办任务<br/><p>有<span>0</span>个未完成</p></a></li>
+		</ul>
+	</div>
+	<div class="remind" id="msg_weixin" style="display:none;">
+		<ul>
+			<li >
+				<a id="callCenterLogin">登陆</a>
+				<a  id="callCenterLogout" class="hide" >退出</a> 
+				<a  id="takeRest" class="hide" >小休 </a> 
+				<a  id="takeOutRest" class="hide" >退出小休</a>
+			</li>
+			<li>
+			<a>&nbsp</a>
+			</li>
+			<li>
+				<a id="waitingNumber" class="hide">待接电话数:</a>
+				<a id="waitingCount" class="hide"></a>
+			</li>
+		</ul>
+		
+	</div>
+	<div class="remind" style="display:none;">
+		<ul>
+			<li><a id=toDoForm>1</a>条待办表单</li>
+			<li><a id=pendingForm>5</a>条待审核表单</li>
+			<li><a id=unreadFeedback>1</a>条待反馈表单</li>
+			<li><a id=unreadFeedback>1</a>条待回访表单</li>
+		</ul>
+	</div>
+	<div id="newMsg" class="center"></div>
+	<div id="foot">
+		<div id="exit">注销系统</div>
+		<div id="copyright" style="text-align:left;"></div>
+	</div>
+</div>
+<div id="right">
+	<div id="header">
+		<ul id="toolbar"></ul>
+		<div id="nav">
+			<a  id="welcome">欢迎您 : <span id="current_username"></span> <span>&#9660;</span></a>
+			<ul class="submenu"><li id="changepassword"></li><li id="profile">个人信息</li><li id="signOut"></li></ul>
+		</div>
+	</div>
+	<div id="path"></div>
+	<div id="main"></div>
+</div>
+	
+</body>
+</html>

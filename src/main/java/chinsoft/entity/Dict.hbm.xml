@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="chinsoft.entity.Dict" table="Dict">
+        <id name="ID" column="ID" type="integer">
+            <generator class="increment"/>
+        </id>
+        <property name="Name" type="string">
+            <column name="Name"/>
+        </property>
+        <property name="Code" type="string">
+            <column name="Code" />
+        </property>
+        <property name="ParentID" type="integer">
+            <column name="ParentID"/>
+        </property>
+        <property name="SequenceNo" type="integer">
+            <column name="SequenceNo"/>
+        </property>
+        <property name="Extension" type="string">
+            <column name="Extension" />
+        </property>
+        <property name="Memo" type="string">
+            <column name="Memo"/>
+        </property>
+        <property name="StatusID" type="integer">
+            <column name="StatusID"/>
+        </property>
+        <property name="IsReadonly" type="integer">
+            <column name="IsReadonly"/>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,29 @@
+<script src="../location/common.js"></script>
+<script src="../location/pick.js"></script>
+<div id="PickLocationSearch" class="list_search">
+	<label class="Common_Keyword"/><h2><input type="text" id="searchKeyword"/></h2>
+	<a class="Button_Search" id="pickSearch"/>
+</div>
+<div id="PickLocationResult"></div>
+<div class="operation">
+	<a id="btnSavePickLocation"></a> <a id="btnCancelPickLocation"></a>
+</div>
+<script id="PickLocationTemplate" type="text/html">
+	<table class="list_result">
+		<tr>
+			<th class="check"></th>
+			<th class='Local_Name'></th>
+			<th class='Local_Address'></th>			
+		</tr>
+		<%
+		for(i = 0; i < data.length; i ++) {
+			var row = data[i];
+		%>
+		<tr id="row<%=row.ID%>">
+			<td class="check"><input type="checkbox"  value="<%=row.ID%>" name="pickRow"/></td>
+			<td><%=row.name%></td>
+			<td><%=row.address%></td>
+		</tr>
+		<%}%>
+	</table>
+</script>
